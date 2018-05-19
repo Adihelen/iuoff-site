@@ -3,7 +3,7 @@
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url('img/home/imagem-principal-overlay.jpg');
+  // background-image: url('img/home/imagem-principal-overlay.jpg');
   background-position: center center;
   @include background-cover;
   hr {
@@ -41,7 +41,7 @@ header.masthead {
 header.QuemSomos {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url('img/Quem-Somos/Imagens/imagem-principal-overlay.jpg');
+  // background-image: url('../../img/Quem-Somos/Imagens/imagem-principal-overlay.jpg');
   background-position: center center;
   @include background-cover;
   hr {
@@ -78,7 +78,7 @@ header.QuemSomos {
 header.SejaUmParceiro {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  background-image: url('img/Parceiros/Imagens/imagem-principal-overlay.jpg');
+  // background-image: url('img/Parceiros/Imagens/imagem-principal-overlay.jpg');
   background-position: center center;
   @include background-cover;
   hr {
