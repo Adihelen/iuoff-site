@@ -1,4 +1,3 @@
-
    <div class="container-fluid no-margin no-padding">
     <div class="banner">
       <img src="assets/img/pacotes-banner.jpg" alt="banner pacotes">
@@ -89,14 +88,13 @@
       <div class="col-md-8">
         
           <div class="row">
-            <!-- {{#each filteredPackages as |package|}}                 -->
-              <div class="col-md-6">                  
+              <div *ngFor="let package of packages" class="col-md-6">                  
                 <div class="card">
                     <img class="card-img-top" src="http://odisseia.pt/wp-content/themes/html5blank-stable6-4-16/img/imagenotfound.png"
                       alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title b-none">
-                        <!-- {{package.title}} -->
+                        {{ package.title }}
 
                         <div class="small text-uppercase">
                           <!-- De: {{package.origin}} | Para: {{package.destination}} -->
@@ -107,11 +105,11 @@
                     <div class="card-footer">
                       <div class="row">
                         <div class="col-sm-12 col-md-4">
-                          <!-- <i class={{package.includeds.firstObject.icon}}></i> -->
+                          <i class={{package.includeds.firstObject.icon}}></i>
                           <!-- <br> {{package.includeds.firstObject.name}} -->
                         </div>
                         <div class="col-sm-12 col-md-4">
-                          <!-- <i class={{package.styles.firstObject.icon}}></i> -->
+                          <i class={{package.styles.firstObject.icon}}></i>
                           <!-- <br> {{package.styles.firstObject.name}} -->
                         </div>
                         <div class="col-sm-12 col-md-4">
@@ -120,7 +118,7 @@
                           </small>
                           <br>
                           <span class="text-secondary negrito">
-                            <!-- {{!-- TODO, criar helper pra formatar moeda --}} -->
+                            
                             <!-- R$ {{package.initialAmount}} -->
                           </span>
                         </div>
@@ -129,7 +127,7 @@
                     </div>
                 </div>
               </div>
-            <!-- {{/each}} -->
+            <!-- fim ngFor -->
             
           </div>
 

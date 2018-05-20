@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -10,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PackagesComponent } from './components/packages/packages.component';
 import { PartnersComponent } from './components/partners/partners.component';
 import { AboutComponent } from './components/about/about.component';
+
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},  
@@ -34,9 +40,17 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ), 
+    AngularFireModule.initializeApp(environment.firebase, 'iuoff-fire'),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    AngularFireModule,
+    AngularFireDatabaseModule, 
+    AngularFireDatabase
+    // FirebaseListObservable, 
+    // FirebaseObjectObservable
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
