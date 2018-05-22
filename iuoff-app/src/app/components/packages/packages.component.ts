@@ -12,7 +12,7 @@ import { FirebaseServiceService } from './../../firebase-service.service';
 
 
 export class PackagesComponent implements OnInit {
-  packages: Array<[{}]>;
+  packages: Array<[object]>;
   firebaseService: any;
 
 
@@ -24,7 +24,7 @@ export class PackagesComponent implements OnInit {
     }).catch(err =>  {
       console.error('erro ao consultar banco de dados: ', err);
     });
-    this.packages = firebaseService.getPackages();
+    // this.packages = firebaseService.getPackages();
     
   }
 

@@ -7,7 +7,7 @@ import * as firebase from 'firebase';
 })
 export class FirebaseServiceService {
   // db: AngularFireDatabase;
-  packages: Array<[{}]>;
+  packages: Array<[object]>;
   
   appFirebase = firebase.initializeApp({
     apiKey: "AIzaSyBKS674gkztNLv5QLxYnGquo9sxNmhkO5M",
