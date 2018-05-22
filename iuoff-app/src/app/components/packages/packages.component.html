@@ -94,10 +94,11 @@
                       alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title b-none">
+                          {{ package}}
                         {{ package.title }}
 
                         <div class="small text-uppercase">
-                          <!-- De: {{package.origin}} | Para: {{package.destination}} -->
+                          De: {{package.origin}} | Para: {{package.destination}}
                         </div>
                       </h5>
 
@@ -106,11 +107,11 @@
                       <div class="row">
                         <div class="col-sm-12 col-md-4">
                           <i class={{package.includeds.firstObject.icon}}></i>
-                          <!-- <br> {{package.includeds.firstObject.name}} -->
+                          <br> {{package.includeds.firstObject.name}}
                         </div>
                         <div class="col-sm-12 col-md-4">
                           <i class={{package.styles.firstObject.icon}}></i>
-                          <!-- <br> {{package.styles.firstObject.name}} -->
+                          <br> {{package.styles.firstObject.name}}
                         </div>
                         <div class="col-sm-12 col-md-4">
                           <small>
@@ -119,7 +120,7 @@
                           <br>
                           <span class="text-secondary negrito">
                             
-                            <!-- R$ {{package.initialAmount}} -->
+                            R$ {{package.initialAmount}}
                           </span>
                         </div>
                       </div>

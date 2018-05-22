@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseListObservable } from "angularfire2/database-deprecated";
+// import { FirebaseListObservable } from "angularfire2/database-deprecated";
 // import { Observable } from 'rxjs';
+
 import { FirebaseServiceService } from './../../firebase-service.service';
 
 @Component({
@@ -11,16 +12,24 @@ import { FirebaseServiceService } from './../../firebase-service.service';
 
 
 export class PackagesComponent implements OnInit {
-  public packages: FirebaseListObservable<any>;
+  packages: Array<[{}]>;
   firebaseService: any;
 
+
+
   constructor(firebaseService: FirebaseServiceService) {
-    this.packages = firebaseService.getPackages();
     this.firebaseService =  firebaseService;
+    this.packages = firebaseService.getPackages().subscribe(packages => {
+      this.packages = packages;
+    }).catch(err =>  {
+      console.error('erro ao consultar banco de dados: ', err);
+    });
+    this.packages = firebaseService.getPackages();
+    
   }
 
   ngOnInit() {
-    let packagesList = this.firebaseService.getPackages();
+
   }
 
 }

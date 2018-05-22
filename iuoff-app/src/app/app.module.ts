@@ -5,8 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 // firebase
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database-deprecated';
+import { AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { environment } from '../environments/environment';
+import * as firebase from 'firebase';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';

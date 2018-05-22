@@ -1,20 +1,37 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database-deprecated';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseServiceService {
-  db: AngularFireDatabase;
-  packages: FirebaseListObservable<any>;
+  // db: AngularFireDatabase;
+  packages: Array<[{}]>;
   
-  constructor(db: AngularFireDatabase) {
-    this.db = db;
+  appFirebase = firebase.initializeApp({
+    apiKey: "AIzaSyBKS674gkztNLv5QLxYnGquo9sxNmhkO5M",
+    authDomain: "iuoff-fire.firebaseapp.com",
+    databaseURL: "https://iuoff-fire.firebaseio.com",
+    projectId: "iuoff-fire",
+    storageBucket: "",
+    messagingSenderId: "187560743950"
+  });  
+
+  db:  any;
+  packagesRef: any;
+
+
+  constructor() {
+    this.db  = this.appFirebase.database();
+    this.packagesRef = this.db.ref('packages');
    }
 
   getPackages(){
-   this.packages =  this.db.list('/packages'); 
-   return this.packages;
+    
+   this.packages =  this.packagesRef;
+   console.log('getPackages appFirebase: ', this.appFirebase , this.packages );
+   return this.packagesRef;
   }
   addPackage(task: any) {  
     task.done = false;   
